@@ -41,6 +41,7 @@ const moneyCalc = {
                 income += transaction.amount
             }
         })
+        console.log('income', income)
         return income
     },
 
@@ -51,10 +52,12 @@ const moneyCalc = {
                 expense += transaction.amount
             }
         })
+        console.log('expense', expense)
         return expense
     },
 
     total() {
+        console.log('total', this.income() + this.expenses())
         return this.income() + this.expenses()
     }
 }
@@ -111,11 +114,8 @@ const Utils = {
 
     formatCurrency(value) {
         const signal = Number(value) >= 0 ? '' : '-'
-
         value = String(value).replace(/\D/g, '')
-
         value = Number(value) / 100
-
         value = value.toLocaleString('pt-BR', {
             style: 'currency',
             currency: 'BRL'
@@ -140,8 +140,8 @@ const Form = {
 
     formatValues() {
         let { description, amount, date } = this.getValues()
-        amount *= 100
-        amount = amount.toFixed(0)
+        amount = amount * 100
+        amount = Number(amount.toFixed(0))
         date = Utils.formatDate(date)
 
         return { description, amount, date }
@@ -156,6 +156,7 @@ const Form = {
     submit(event) {
         event.preventDefault()
         const transaction = this.formatValues()
+        console.log(transaction)
         moneyCalc.add(transaction)
         this.clearFields()
         Modal.toggle()
