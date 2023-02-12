@@ -17,7 +17,7 @@ This is version 1.0
 
 This was one of the very first projects I built, from the time I had just enrolled at the bootcamp.
 
-While developing this I really improved my CSS and JavaScript skills - I ended up applying the same coding style on other projects, like [the Pomofocus clone](). On the other hand, it uses the good old 3 file architecture 💀
+While developing this I really improved my CSS and JavaScript skills - I ended up applying the same coding style on other projects, like [the Pomofocus clone](https://github.com/Maymisk/pomofocus-basic-clone). On the other hand, it uses the good old 3 file architecture 💀
 
 Nonetheless, lookng back at it, it turned out pretty good 😏 
 ## ✨ Technologies
